@@ -1,8 +1,9 @@
-package codeSignal2;
+package codeSignal3;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 class Point {
 	
@@ -61,7 +62,7 @@ public class Main {
 		}
 
 //		System.out.println(pontos);
-//		
+		
 //		System.out.println(distancesBetweenPoints);
 
 		Collections.sort(distancesBetweenPoints);
@@ -76,7 +77,11 @@ public class Main {
 		int[][] p = { { 0, 11 }, { -7, 1 }, { -5, -3 }, {0,-3} , {0,1}, {-5, -1} };
 		
 		int[][] p2 = { { 4, 3 }, { -1, -3 }, { 5 ,2 }, { 0, -2 } };
+		
+		int[][] p3 = { { 5, 3 }, { 0, 2 }, { -1 ,-3 }, { 7, -9 }, { 3, -6 } };
+		
+		int[][] p4 = { {0, 11}, {-7, 1}, {-5, -3} };
 
-		System.out.println(solution(p2));
+		System.out.printf(String.format(Locale.ROOT, "%.9f\n",solution(p4)));
 	}
 }
