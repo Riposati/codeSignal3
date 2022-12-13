@@ -1,7 +1,6 @@
 package codeSignal3;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -25,7 +24,7 @@ public class Main {
 	static double solution(int[][] p) {
 
 		List<Point> pontos = new ArrayList<>();
-		List<Double> distancesBetweenPoints = new ArrayList<>();
+//		List<Double> distancesBetweenPoints = new ArrayList<>();
 
 //		System.out.println(p.length);
 
@@ -41,6 +40,7 @@ public class Main {
 		}
 
 		double euclides = 0;
+		double minDist = Double.POSITIVE_INFINITY;
 
 		for (int i = 0; i < pontos.size(); i++) {
 
@@ -56,7 +56,9 @@ public class Main {
 //				System.out.println(euclides);
 				
 				if (euclides != 0.0) {
-					distancesBetweenPoints.add(euclides);
+					//distancesBetweenPoints.add(euclides);
+					if(euclides < minDist)
+						minDist = euclides;
 				}
 			}
 		}
@@ -65,11 +67,13 @@ public class Main {
 		
 //		System.out.println(distancesBetweenPoints);
 
-		Collections.sort(distancesBetweenPoints);
+		//Collections.sort(distancesBetweenPoints);
 
 		//System.out.printf("%.9f", distancesBetweenPoints.get(0));
 
-		return distancesBetweenPoints.get(0);
+		//return distancesBetweenPoints.get(0);
+		
+		return minDist;
 	} 
 
 	public static void main(String[] args) {
@@ -81,7 +85,9 @@ public class Main {
 		int[][] p3 = { { 5, 3 }, { 0, 2 }, { -1 ,-3 }, { 7, -9 }, { 3, -6 } };
 		
 		int[][] p4 = { {0, 11}, {-7, 1}, {-5, -3} };
+		
+		int[][] p5 = {{2, 3}, {12, 30}, {40, 50}, {5, 1}, {12, 10}, {3, 4}};
 
-		System.out.printf(String.format(Locale.ROOT, "%.9f\n",solution(p4)));
+		System.out.printf(String.format(Locale.ROOT, "%.9f\n",solution(p5)));
 	}
 }
